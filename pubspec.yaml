@@ -1,9 +1,9 @@
 name: asion_dev
 description: A new jaspr project.
-version: 0.0.1
+version: 0.0.2
 
 environment:
-  sdk: '>=3.5.0 <4.0.0'
+  sdk: ">=3.5.0 <4.0.0"
 
 dependencies:
   jaspr: ^0.18.0
@@ -18,4 +18,3 @@ dev_dependencies:
 
 jaspr:
   mode: static
-
