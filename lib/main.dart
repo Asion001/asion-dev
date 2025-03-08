@@ -4,6 +4,7 @@
 // To run code on the client, use the @client annotation.
 
 // Server-specific jaspr import.
+import 'package:asion_dev/constants/theme.dart';
 import 'package:jaspr/server.dart';
 
 // Imports the [App] component.
@@ -35,9 +36,12 @@ void main() {
         minHeight: 100.vh,
         padding: Padding.zero,
         margin: Margin.zero,
-        fontFamily: const FontFamily.list(
-          [FontFamily('Oswald'), FontFamilies.sansSerif],
-        ),
+        color: primaryColor,
+        fontFamily: const FontFamily.list([
+          FontFamily('Oswald'),
+          FontFamilies.sansSerif,
+        ]),
+        backgroundColor: backgroudColor,
       ),
       css('h1').styles(
         margin: Margin.all(5.pt),
@@ -45,7 +49,7 @@ void main() {
         fontSize: 4.rem,
       ),
       css('h2').styles(
-        margin: Margin.unset,
+        margin: Margin.all(2.pt),
         fontSize: 1.rem,
       ),
     ],
