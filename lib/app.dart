@@ -23,7 +23,7 @@ class App extends StatelessComponent {
       Router(routes: [
         Route(
             path: '/',
-            title: 'Welcome',
+            title: 'It\'s Me',
             builder: (context, state) => const Home()),
       ]),
     ]);

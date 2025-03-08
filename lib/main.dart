@@ -27,8 +27,7 @@ void main() {
     title: 'Hello',
     styles: [
       // Special import rule to include to another css file.
-      css.import(
-          'https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap'),
+      css.import('https://fonts.googleapis.com/css2?family=Oswald'),
       // Each style rule takes a valid css selector and a set of styles.
       // Styles are defined using type-safe css bindings and can be freely chained and nested.
       css('html, body').styles(
