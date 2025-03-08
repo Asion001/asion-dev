@@ -5,6 +5,7 @@
 
 # Conventional directory for build output.
 /build/.dart_tool
+/build/jaspr/.build.manifest
 
 # Miscellaneous
 *.class
