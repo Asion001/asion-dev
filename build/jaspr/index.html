@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="/"/>
+    <meta charset="utf-8"/>
+    <style>
+      @import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap);
+      html, body {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        min-height: 100vh;
+        font-family: 'Oswald', sans-serif;
+      }
+      h1 {
+        margin: unset;
+        font-size: 4rem;
+      }
+      h2 {
+        margin: unset;
+        font-size: 1rem;
+      }
+    </style>
+    <!--$-->
+    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--/-->
+    <script src="pages/home.client.dart.js" defer></script>
+    <style>
+      .main {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      .main section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main"><!--@pages/home--><section><h1>You know who i am</h1></section><!--/@pages/home--></div>
+  </body>
+</html>
