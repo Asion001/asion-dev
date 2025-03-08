@@ -23,7 +23,7 @@ void main() {
   // [Document] renders the root document structure (<html>, <head> and <body>)
   // with the provided parameters and components.
   runApp(Document(
-    title: 'asion_dev',
+    title: 'Hello',
     styles: [
       // Special import rule to include to another css file.
       css.import(
@@ -40,7 +40,8 @@ void main() {
         ),
       ),
       css('h1').styles(
-        margin: Margin.unset,
+        margin: Margin.all(5.pt),
+        textAlign: TextAlign.center,
         fontSize: 4.rem,
       ),
       css('h2').styles(
