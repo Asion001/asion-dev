@@ -23,13 +23,55 @@ void main() {
   //
   // [Document] renders the root document structure (<html>, <head> and <body>)
   // with the provided parameters and components.
+
+  const name = 'Asion\'s website';
+  const description = 'Info about me (or not)';
+
   runApp(Document(
     title: 'Hello',
+    lang: 'en',
+    meta: {'name': name},
+    head: [
+      // Open Graph tags
+      meta(
+        attributes: {'property': 'og:title'},
+        content: name,
+      ),
+      meta(
+        attributes: {'property': 'og:description'},
+        content: description,
+      ),
+      meta(
+        attributes: {'property': 'og:url'},
+        content: 'https://asion.dev',
+      ),
+      meta(
+        attributes: {'property': 'og:type'},
+        content: 'website',
+      ),
+
+      // Twitter Card tags
+      meta(
+        attributes: {'name': 'twitter:title'},
+        content: name,
+      ),
+      meta(
+        attributes: {'name': 'twitter:description'},
+        content: description,
+      ),
+
+      link(href: 'https://fonts.googleapis.com', rel: 'preconnect'),
+      link(
+        href: 'https://fonts.gstatic.com',
+        attributes: {'crossorigin': ''},
+        rel: 'preconnect',
+      ),
+      link(
+        href: 'https://fonts.googleapis.com/css2?family=Oswald&display=swap',
+        rel: 'stylesheet',
+      )
+    ],
     styles: [
-      // Special import rule to include to another css file.
-      css.import('https://fonts.googleapis.com/css2?family=Oswald'),
-      // Each style rule takes a valid css selector and a set of styles.
-      // Styles are defined using type-safe css bindings and can be freely chained and nested.
       css('html, body').styles(
         width: 100.percent,
         minHeight: 100.vh,
