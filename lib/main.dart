@@ -14,15 +14,9 @@ import 'app.dart';
 import 'jaspr_options.dart';
 
 void main() {
-  // Initializes the server environment with the generated default options.
   Jaspr.initializeApp(
     options: defaultJasprOptions,
   );
-
-  // Starts the app.
-  //
-  // [Document] renders the root document structure (<html>, <head> and <body>)
-  // with the provided parameters and components.
 
   const name = 'Asion\'s website';
   const description = 'Info about me (or not)';
@@ -30,7 +24,7 @@ void main() {
   runApp(Document(
     title: 'Hello',
     lang: 'en',
-    meta: {'name': name},
+    meta: {'name': name, 'description': description},
     head: [
       // Open Graph tags
       meta(
@@ -60,16 +54,31 @@ void main() {
         content: description,
       ),
 
+      // Preconnect for fonts
       link(href: 'https://fonts.googleapis.com', rel: 'preconnect'),
       link(
         href: 'https://fonts.gstatic.com',
         attributes: {'crossorigin': ''},
         rel: 'preconnect',
       ),
+
+      // Preload the Oswald font stylesheet and switch to stylesheet on load
       link(
         href: 'https://fonts.googleapis.com/css2?family=Oswald&display=swap',
-        rel: 'stylesheet',
-      )
+        rel: 'preload',
+        attributes: {
+          'as': 'style',
+          'onload': "this.onload=null;this.rel='stylesheet'"
+        },
+      ),
+      // Fallback for users with JavaScript disabled
+      DomComponent(
+        tag: 'noscript',
+        child: link(
+          href: 'https://fonts.googleapis.com/css2?family=Oswald&display=swap',
+          rel: 'stylesheet',
+        ),
+      ),
     ],
     styles: [
       css('html, body').styles(

@@ -1,0 +1,8 @@
+# Allow all search engines
+User-agent: *
+
+# Allow everything else
+Allow: /
+
+# Specify the location of the sitemap
+Sitemap: https://asion.dev/sitemap.xml
